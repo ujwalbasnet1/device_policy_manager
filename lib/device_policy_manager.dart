@@ -70,4 +70,16 @@ class DevicePolicyManager {
       rethrow;
     }
   }
+
+  static Future<void> setMaxFailedPassword(int maxFailedPassword) async {
+    try {
+      await _channel.invokeMethod(
+        'setMaxFailedPassword',
+        {"maxFailedPassword": maxFailedPassword},
+      );
+    } on PlatformException catch (error) {
+      log("$error");
+      rethrow;
+    }
+  }
 }

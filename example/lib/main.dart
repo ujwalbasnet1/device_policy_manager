@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
                 const SizedBox(height: 20.0),
                 TextButton(
                   onPressed: () async {
-                    await DevicePolicyManager.removeActiveAdmin();
+                    await DevicePolicyManager.setMaxFailedPassword(5);
                   },
                   child: const Text("Disable administrative"),
                 ),
